@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Inventario</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Registrar Producto</h2>
+            <form id="formProducto">
+                <label for="idProducto">ID:</label>
+                <input type="number" id="idProducto">
+
+                <label for="nombreProducto">Nombre:</label>
+                <input type="text" id="nombreProducto">
+
+                <label for="categoriaProducto">Categoría:</label>
+                <input type="text" id="categoriaProducto">
+
+                <label for="precioProducto">Precio:</label>
+                <input type="number" id="precioProducto" step="0.01">
+
+                <label for="stockProducto">Stock:</label>
+                <input type="number" id="stockProducto">
+
+                <button type="submit">Registrar Producto</button>
+            </form>
+            <p id="mensaje"></p>
+        </section>
+        <section>
+            <h2>Inventario</h2>
+            <input type="text" id="buscarProducto" placeholder="Buscar producto">
+            <button id="btnBuscar">Buscar</button>
+            <button id="btnMostrarTodos">Mostrar Todos</button>
+            <button id="btnStockBajo">Stock Bajo</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos">
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Actualizar Stock</h2>
+            <form id="formStock">
+                <label for="idStock">ID del Producto:</label>
+                <input type="number" id="idStock">
+
+                <label for="nuevoStock">Nuevo Stock:</label>
+                <input type="number" id="nuevoStock">
+
+                <button type="submit">Actualizar Stock</button>
+            </form>
+            <p id="mensajeStock"></p>
+        </section>
+        <section>
+            <h2>Resumen del Inventario</h2>
+            <div id="resumen">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Sistema de Inventario</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
