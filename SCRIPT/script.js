@@ -13,6 +13,7 @@ const buscarProducto = document.querySelector("#buscarProducto");
 const btnBuscar = document.querySelector("#btnBuscar");
 const btnMostrarTodos = document.querySelector("#btnMostrarTodos");
 const btnStockBajo = document.querySelector("#btnStockBajo");
+const filtroCategoria = document.querySelector("#filtroCategoria");
 
 const tablaProductos = document.querySelector("#tablaProductos");
 
@@ -22,6 +23,24 @@ const nuevoStock = document.querySelector("#nuevoStock");
 const mensajeStock = document.querySelector("#mensajeStock");
 
 const resumen = document.querySelector("#resumen");
+
+function actualizarCategorias() {
+    const categorias = productos.map(function(producto) {
+        return producto.categoria;
+    });
+
+    const categoriasUnicas = categorias.filter(function(categoria, indice) {
+        return categorias.indexOf(categoria) === indice;
+    });
+
+    filtroCategoria.innerHTML = '<option value="">Todas</option>';
+
+    categoriasUnicas.forEach(function(categoria) {
+        filtroCategoria.innerHTML += `
+            <option value="${categoria}">${categoria}</option>
+        `;
+    });
+}
 
 formProducto.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -58,6 +77,7 @@ formProducto.addEventListener("submit", function(event) {
             stock: stock
         };
         productos.push(producto);
+        actualizarCategorias();
 
         mensaje.textContent = "Producto registrado correctamente.";
 
@@ -124,6 +144,8 @@ function editarProducto(id) {
     producto.categoria = nuevaCategoria.trim().replace(/\s+/g, " ");
     producto.precio = precio;
 
+    actualizarCategorias();
+
     mensaje.textContent = "Producto actualizado correctamente.";
 
     mostrarProductos(productos);
@@ -148,6 +170,7 @@ function eliminarProducto(id) {
 
     const indice = productos.indexOf(producto);
     productos.splice(indice, 1);
+    actualizarCategorias();
 
     mensaje.textContent = "Producto eliminado correctamente.";
 
@@ -177,6 +200,21 @@ btnStockBajo.addEventListener("click", function() {
     });
 
     mostrarProductos(productosStockBajo);
+});
+
+filtroCategoria.addEventListener("change", function() {
+    const categoriaSeleccionada = filtroCategoria.value;
+
+    if (categoriaSeleccionada === "") {
+        mostrarProductos(productos);
+        return;
+    }
+
+    const resultados = productos.filter(function(producto) {
+        return producto.categoria === categoriaSeleccionada;
+    });
+
+    mostrarProductos(resultados);
 });
 
 
@@ -230,5 +268,6 @@ function mostrarResumen() {
 }
 
 
+actualizarCategorias();
 mostrarProductos(productos);
 mostrarResumen();
