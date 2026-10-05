@@ -82,12 +82,54 @@ function mostrarProductos(lista) {
                 <td>S/ ${producto.precio.toFixed(2)}</td>
                 <td>${producto.stock}</td>
                 <td>
+                    <button onclick="editarProducto(${producto.id})">Editar</button>
                     <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
                 </td>
             </tr>
         `;
     }).join("");
 }
+
+function editarProducto(id) {
+    const producto = productos.find(function(producto) {
+        return producto.id === id;
+    });
+
+    if (producto === undefined) {
+        mensaje.textContent = "Producto no encontrado.";
+        return;
+    }
+
+    const nuevoNombre = prompt("Ingrese el nuevo nombre:", producto.nombre);
+    const nuevaCategoria = prompt("Ingrese la nueva categoría:", producto.categoria);
+    const nuevoPrecio = prompt("Ingrese el nuevo precio:", producto.precio);
+
+    if (nuevoNombre === null || nuevaCategoria === null || nuevoPrecio === null) {
+        return;
+    }
+
+    if (nuevoNombre.trim() === "" || nuevaCategoria.trim() === "") {
+        mensaje.textContent = "Complete todos los campos.";
+        return;
+    }
+
+    const precio = Number(nuevoPrecio);
+
+    if (Number.isNaN(precio) || precio <= 0) {
+        mensaje.textContent = "Ingrese un precio válido.";
+        return;
+    }
+
+    producto.nombre = nuevoNombre.trim().replace(/\s+/g, " ");
+    producto.categoria = nuevaCategoria.trim().replace(/\s+/g, " ");
+    producto.precio = precio;
+
+    mensaje.textContent = "Producto actualizado correctamente.";
+
+    mostrarProductos(productos);
+    mostrarResumen();
+}
+
 function eliminarProducto(id) {
     const producto = productos.find(function(producto) {
         return producto.id === id;
