@@ -81,9 +81,36 @@ function mostrarProductos(lista) {
                 <td>${producto.categoria}</td>
                 <td>S/ ${producto.precio.toFixed(2)}</td>
                 <td>${producto.stock}</td>
+                <td>
+                    <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+                </td>
             </tr>
         `;
     }).join("");
+}
+function eliminarProducto(id) {
+    const producto = productos.find(function(producto) {
+        return producto.id === id;
+    });
+
+    if (producto === undefined) {
+        mensaje.textContent = "Producto no encontrado.";
+        return;
+    }
+
+    const confirmar = confirm("¿Desea eliminar este producto?");
+
+    if (!confirmar) {
+        return;
+    }
+
+    const indice = productos.indexOf(producto);
+    productos.splice(indice, 1);
+
+    mensaje.textContent = "Producto eliminado correctamente.";
+
+    mostrarProductos(productos);
+    mostrarResumen();
 }
 
 
