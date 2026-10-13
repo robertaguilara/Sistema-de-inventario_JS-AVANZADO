@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Teclado mecánico",
-      "categoria": "teclados",
+      "categoria": "Teclados",
       "precio": 150,
       "stock": 10
     },

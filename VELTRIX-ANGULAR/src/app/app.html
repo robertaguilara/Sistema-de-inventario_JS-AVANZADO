@@ -216,6 +216,43 @@
       </article>
     </section>
 
+    
+<section class="panel" id="categorias">
+  <div class="section-heading">
+    <div>
+      <h2>Categorías de productos</h2>
+      <p>Selecciona una categoría para filtrar el inventario.</p>
+    </div>
+  </div>
+
+  <div class="categories-grid">
+    <button
+      type="button"
+      class="category-card"
+      [class.active]="categoriaSeleccionada() === 'Todas'"
+      (click)="categoriaSeleccionada.set('Todas')"
+    >
+      <span class="category-name">Todas</span>
+      <span class="category-count">{{ productos().length }} productos</span>
+    </button>
+
+    @for (categoria of categoriasDisponibles(); track categoria) {
+      <button
+        type="button"
+        class="category-card"
+        [class.active]="categoriaSeleccionada() === categoria"
+        (click)="categoriaSeleccionada.set(categoria)"
+      >
+        <span class="category-name">{{ categoria }}</span>
+        <span class="category-count">
+          {{ productos().filter(p => p.categoria.trim() === categoria).length }}
+          productos
+        </span>
+      </button>
+    }
+  </div>
+</section>
+
     <section class="panel products-panel" id="productos">
       <div class="panel-heading">
         <div>

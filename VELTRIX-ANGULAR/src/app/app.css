@@ -1229,3 +1229,58 @@
     flex-direction: column;
   }
 }
+
+/* Categorías de productos */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--border-color, #2b3545);
+  border-radius: 14px;
+  background: var(--card-background, #151d2b);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.category-card:hover {
+  border-color: var(--accent-color, #5b8cff);
+  transform: translateY(-2px);
+}
+
+.category-card.active {
+  border-color: var(--accent-color, #5b8cff);
+  background: var(--card-active-background, #1d2a40);
+}
+
+.category-card:focus-visible {
+  outline: 2px solid var(--accent-color, #5b8cff);
+  outline-offset: 3px;
+}
+
+.category-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.category-count {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+@media (max-width: 480px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}

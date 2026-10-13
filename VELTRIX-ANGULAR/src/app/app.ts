@@ -39,19 +39,40 @@ export class App implements OnInit {
   protected readonly productos = signal<Producto[]>([]);
   protected readonly movimientos = signal<Movimiento[]>([]);
   protected readonly busqueda = signal('');
+  protected readonly categoriaSeleccionada = signal('Todas');
+
+protected readonly categoriasDisponibles = computed(() => {
+  const categorias = this.productos().map(
+    (producto) => producto.categoria.trim()
+  );
+
+  return [...new Set(categorias)].sort((a, b) =>
+    a.localeCompare(b)
+  );
+});
   protected readonly filtroMovimientos = signal<
     'todos' | 'entrada' | 'salida'
   >('todos');
 
-  protected readonly productosFiltrados = computed(() => {
-    const texto = this.busqueda().trim().toLowerCase();
+  
+protected readonly productosFiltrados = computed(() => {
+  const texto = this.busqueda().trim().toLowerCase();
+  const categoria = this.categoriaSeleccionada();
 
-    return this.productos().filter((producto) =>
+  return this.productos().filter((producto) => {
+    const coincideTexto =
       producto.nombre.toLowerCase().includes(texto) ||
       producto.categoria.toLowerCase().includes(texto) ||
-      producto.id.toString() === texto
-    );
+      producto.id.toString() === texto;
+
+    const coincideCategoria =
+      categoria === 'Todas' ||
+      producto.categoria.trim() === categoria;
+
+    return coincideTexto && coincideCategoria;
   });
+});
+
 
   protected readonly movimientosFiltrados = computed(() => {
     const filtro = this.filtroMovimientos();
@@ -359,7 +380,11 @@ export class App implements OnInit {
     productoId: number,
     tipo: 'entrada' | 'salida',
     cantidad: number
-  ): void {
+    ): void {
+    if (this.cargando()) {
+      return;
+    }
+
     if (!Number.isInteger(cantidad) || cantidad <= 0) {
       this.mensaje.set(
         'La cantidad debe ser un número entero mayor que cero.'
