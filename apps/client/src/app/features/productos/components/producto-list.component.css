@@ -1,0 +1,96 @@
+.products-panel {
+  @apply mb-7 p-7 border border-[#26334b] rounded-[13px] bg-[#121c2e] shadow-lg shadow-black/20;
+}
+
+.panel-heading {
+  @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6;
+}
+
+.panel-heading h2 {
+  @apply m-0 text-[#edf2fc] text-[17px] font-bold;
+}
+
+.panel-heading p {
+  @apply mt-1 text-[#8291aa] text-xs;
+}
+
+.products-toolbar {
+  @apply mb-5 flex flex-col sm:flex-row gap-3;
+}
+
+.search-container {
+  @apply relative flex-1;
+}
+
+.search-icon {
+  @apply absolute left-4 top-1/2 -translate-y-1/2 text-[#8492a6] text-sm pointer-events-none;
+}
+
+.products-toolbar input {
+  @apply w-full py-3.5 pl-11 pr-4 border border-[#334155] rounded-xl bg-[#111c30] text-[#f8fafc] text-sm outline-none transition-all placeholder:text-[#8492a6] focus:border-[#38bdf8] focus:ring-2 focus:ring-[#38bdf8]/20;
+}
+
+.products-table-wrapper {
+  @apply w-full overflow-x-auto rounded-xl border border-[#263449]/70;
+}
+
+.products-table {
+  @apply w-full text-left border-collapse;
+}
+
+.products-table th {
+  @apply py-4 px-5 bg-[#17243a] text-[#94a3b8] text-[11px] font-bold tracking-[0.7px] uppercase whitespace-nowrap border-b border-[#263449];
+}
+
+.products-table td {
+  @apply p-4 px-5 border-b border-[#263449]/60 text-[#e2e8f0] text-[13px] align-middle;
+}
+
+.products-table tbody tr {
+  @apply hover:bg-[#38bdf8]/10 transition-colors duration-150;
+}
+
+.products-table tbody tr:last-child td {
+  @apply border-b-0;
+}
+
+.btn-registrar-header {
+  @apply py-2.5 px-4 rounded-xl text-white bg-[#0284c7] hover:bg-[#0369a1] hover:shadow-md hover:shadow-[#0284c7]/20 text-xs font-semibold cursor-pointer transition-all active:scale-95;
+}
+
+.btn-accion-editar {
+  @apply py-1.5 px-3 border border-[#38bdf8] rounded-lg text-[#38bdf8] bg-transparent hover:bg-[#38bdf8] hover:text-white text-xs font-semibold cursor-pointer transition-all active:scale-95;
+}
+
+.btn-accion-eliminar {
+  @apply py-1.5 px-3 border border-[#f87171] rounded-lg text-[#f87171] bg-transparent hover:bg-[#f87171] hover:text-white text-xs font-semibold cursor-pointer transition-all active:scale-95;
+}
+
+.stock-pill {
+  @apply inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold tracking-wide;
+}
+
+.stock-dot {
+  @apply w-1.5 h-1.5 rounded-full;
+}
+
+.stock-pill.bajo {
+  @apply bg-[#7c2d12]/30 text-[#fdba74] border border-[#ea580c]/50;
+}
+.stock-pill.bajo .stock-dot {
+  @apply bg-[#ea580c] animate-pulse;
+}
+
+.stock-pill.normal {
+  @apply bg-[#14532d]/30 text-[#86efac] border border-[#16a34a]/50;
+}
+.stock-pill.normal .stock-dot {
+  @apply bg-[#16a34a];
+}
+
+.stock-pill.cero {
+  @apply bg-[#7f1d1d]/30 text-[#fca5a5] border border-[#dc2626]/50;
+}
+.stock-pill.cero .stock-dot {
+  @apply bg-[#dc2626];
+}

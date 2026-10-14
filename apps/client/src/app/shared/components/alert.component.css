@@ -1,0 +1,15 @@
+.alert-container {
+  @apply flex items-center justify-between p-4 mb-6 rounded-xl border text-sm font-medium transition-all shadow-md;
+}
+
+.alert-error {
+  @apply bg-[#302919] text-[#fcd34d] border-[#695326];
+}
+
+.alert-exito {
+  @apply bg-[#17453d] text-[#6ee7b7] border-[#059669]/60;
+}
+
+.alert-btn-close {
+  @apply text-[#fcd34d]/60 hover:text-[#fcd34d] ml-4 font-bold text-base cursor-pointer transition-colors;
+}

@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "angular": "^1.8.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@nx/angular": "^23.3.0",
+    "@nx/nest": "^23.3.0",
+    "@nx/playwright": "^23.3.0",
+    "@playwright/test": "^1.64.0",
+    "nx": "^23.3.0"
+  }
+}

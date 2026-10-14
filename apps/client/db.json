@@ -1,0 +1,59 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Teclado mecánico",
+      "categoria": "Teclados",
+      "precio": 150,
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "nombre": "Mouse inalámbrico",
+      "categoria": "mouse",
+      "precio": 80,
+      "stock": 15
+    },
+    {
+      "id": 3,
+      "nombre": "Monitor 24 pulgadas",
+      "categoria": "monitores",
+      "precio": 650,
+      "stock": 5
+    },
+    {
+      "id": 4,
+      "nombre": "Audífonos de prueba",
+      "categoria": "Audio",
+      "precio": 79.9,
+      "stock": 8
+    },
+    {
+      "id": 5,
+      "nombre": "Parlante Bluetooth",
+      "categoria": "Audio",
+      "precio": 120,
+      "stock": 6
+    }
+  ],
+  "movimientos": [
+    {
+      "productoId": 3,
+      "productoNombre": "Monitor 24 pulgadas",
+      "tipo": "entrada",
+      "cantidad": 2,
+      "stockResultante": 6,
+      "fecha": "2026-10-13T20:38:56.657Z",
+      "id": 1
+    },
+    {
+      "productoId": 3,
+      "productoNombre": "Monitor 24 pulgadas",
+      "tipo": "salida",
+      "cantidad": 1,
+      "stockResultante": 5,
+      "fecha": "2026-10-13T20:41:07.490Z",
+      "id": 2
+    }
+  ]
+}

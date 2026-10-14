@@ -1,0 +1,55 @@
+.app-container {
+  @apply flex min-h-screen bg-[#0b1120] text-[#e8edf7] font-sans;
+}
+
+.main-content {
+  @apply flex-1 min-w-0 p-8 overflow-hidden;
+}
+
+.bottom-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6;
+}
+
+.panel {
+  @apply min-w-0 p-6 border border-[#26334b] rounded-[13px] bg-[#121c2e];
+}
+
+.panel-heading {
+  @apply flex items-center justify-between gap-4 mb-4;
+}
+
+.panel-heading h2 {
+  @apply m-0 text-[#edf2fc] text-[17px] font-bold;
+}
+
+.panel-heading p {
+  @apply mt-1 text-[#8291aa] text-xs;
+}
+
+.action-card {
+  @apply flex items-center gap-3 w-full p-4 mb-3 border border-[#2a3850] rounded-xl text-[#e9eef9] bg-[#162237] text-left cursor-pointer transition-all hover:border-[#4d75ba] hover:bg-[#1a2b46];
+}
+
+.action-icon {
+  @apply w-10 h-10 flex-shrink-0 grid place-items-center rounded-lg text-[#a9caff] bg-[#243e67] text-2xl;
+}
+
+.action-icon.movement {
+  @apply text-[#8ee7c3] bg-[#1b473e] text-lg;
+}
+
+.status-row {
+  @apply flex items-center gap-2.5 py-4 border-b border-[#29354a] text-[#c0cadd] text-xs;
+}
+
+.status-check {
+  @apply w-6 h-6 grid place-items-center rounded-full text-[#65e3b5] bg-[#17453d];
+}
+
+.status-note {
+  @apply mt-5 p-4 border border-[#2b4163] rounded-lg bg-[#172741];
+}
+
+.footer {
+  @apply flex justify-between gap-4 mt-7 pt-4 border-t border-[#253149] text-[#72819a] text-[10px];
+}

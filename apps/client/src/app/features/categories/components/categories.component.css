@@ -1,0 +1,35 @@
+.categories-panel {
+  @apply mb-7 p-7 border border-[#26334b] rounded-[13px] bg-[#121c2e];
+}
+
+.section-heading {
+  @apply mb-5;
+}
+
+.section-heading h2 {
+  @apply m-0 text-[#edf2fc] text-[17px] font-bold;
+}
+
+.section-heading p {
+  @apply mt-1 text-[#8291aa] text-xs;
+}
+
+.categories-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 mt-4;
+}
+
+.category-card {
+  @apply flex flex-col items-start gap-2 p-4 rounded-[14px] border border-[#2b3545] bg-[#151d2b] text-left cursor-pointer transition-all duration-200 hover:border-[#5b8cff] hover:-translate-y-0.5;
+}
+
+.category-card.active {
+  @apply border-[#5b8cff] bg-[#1d2a40] shadow-md shadow-[#5b8cff]/20;
+}
+
+.category-name {
+  @apply text-sm font-semibold text-[#f1f5f9];
+}
+
+.category-count {
+  @apply text-xs text-[#94a3b8];
+}

@@ -1,10 +1,12 @@
 node_modules/
 dist/
+**/dist/
+.nx/
 .vscode/
 *.log
 # Archivos generados por Angular
 /.angular
-/dist
+**/dist/
 /out-tsc
 
 # Dependencias de Node.js

@@ -1,0 +1,47 @@
+.topbar {
+  @apply flex items-center justify-between gap-5 mb-7;
+}
+
+.breadcrumb {
+  @apply text-[#7f91b0] text-[10px] font-bold tracking-[1.5px] uppercase;
+}
+
+.topbar h1 {
+  @apply mt-2 text-[#f4f7ff] text-[27px] font-extrabold;
+}
+
+.user-profile {
+  @apply flex items-center gap-3;
+}
+
+.user-avatar {
+  @apply w-[42px] h-[42px] grid place-items-center border border-[#4868a5] rounded-full text-[#c9dcff] bg-[#1b3157] text-[13px] font-bold;
+}
+
+.user-info strong {
+  @apply block text-[#e9eef9] text-[13px];
+}
+
+.user-info span {
+  @apply block mt-1 text-[#8594ad] text-[11px];
+}
+
+.welcome {
+  @apply relative flex items-center justify-between gap-5 min-h-[190px] p-8 overflow-hidden border border-[#2a4a83] rounded-2xl bg-gradient-to-r from-[#172b4c] via-[#1a2450] to-[#29245c] mb-8 shadow-sm;
+}
+
+.eyebrow {
+  @apply text-[#8eb8ff] text-[10px] font-bold tracking-[2px] uppercase;
+}
+
+.welcome h2 {
+  @apply my-3 text-white text-[25px] font-bold;
+}
+
+.welcome p {
+  @apply max-w-[500px] m-0 text-[#b3c3df] text-sm leading-relaxed;
+}
+
+.welcome-decoration {
+  @apply text-white/10 text-[155px] font-black leading-none select-none;
+}

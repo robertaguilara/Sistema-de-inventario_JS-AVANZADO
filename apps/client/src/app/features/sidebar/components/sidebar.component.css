@@ -1,0 +1,55 @@
+.sidebar {
+  @apply w-[250px] min-h-screen p-7 flex flex-col bg-[#111a2d] border-r border-[#253149] text-[#e8edf7];
+}
+
+.brand {
+  @apply flex items-center gap-3 px-2 pb-8;
+}
+
+.brand-icon {
+  @apply w-11 h-11 grid place-items-center rounded-xl text-white bg-gradient-to-br from-[#3478f6] to-[#6d5dfc] text-2xl font-extrabold shadow-sm;
+}
+
+.brand h2 {
+  @apply m-0 text-[19px] tracking-[1.5px] font-bold text-white;
+}
+
+.brand span {
+  @apply text-[#8b9ab5] text-[11px] tracking-[3px] font-semibold;
+}
+
+.menu-title {
+  @apply mx-2.5 my-3 text-[#71809b] text-[10px] font-bold tracking-[1.5px] uppercase;
+}
+
+.menu {
+  @apply flex flex-col gap-2;
+}
+
+.menu-item {
+  @apply flex items-center gap-3 py-3 px-3 rounded-lg text-[#9eacc4] text-sm transition-all;
+}
+
+.menu-item:hover {
+  @apply text-white bg-[#1b2942];
+}
+
+.menu-item.active {
+  @apply text-white bg-[#2455b8] shadow-md;
+}
+
+.menu-icon {
+  @apply w-[22px] text-center text-lg;
+}
+
+.sidebar-footer {
+  @apply mt-auto pt-4 px-2 border-t border-[#29354a] text-[#a9b5c9] text-xs;
+}
+
+.status-dot {
+  @apply inline-block w-2 h-2 mr-1.5 rounded-full bg-[#35d49a];
+}
+
+.sidebar-footer small {
+  @apply block mt-2 ml-4 text-[#71809b];
+}

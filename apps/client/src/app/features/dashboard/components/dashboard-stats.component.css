@@ -1,0 +1,59 @@
+.section-heading {
+  @apply flex items-center justify-between gap-4 my-6;
+}
+
+.section-heading h2 {
+  @apply m-0 text-[#edf2fc] text-lg font-bold tracking-tight;
+}
+
+.section-heading p {
+  @apply mt-1 text-[#8291aa] text-xs;
+}
+
+.demo-label {
+  @apply py-1 px-2.5 border border-[#35435d] rounded-md text-[#9bacc8] text-[10px] font-bold tracking-wider uppercase bg-[#162237];
+}
+
+.stats-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6;
+}
+
+.stat-card {
+  @apply flex flex-col justify-between p-6 border border-[#26334b] rounded-2xl bg-[#121c2e] hover:border-[#425b84] hover:-translate-y-1 transition-all duration-200 shadow-md shadow-black/10;
+}
+
+.stat-top {
+  @apply flex items-center justify-between gap-2;
+}
+
+.stat-icon {
+  @apply w-10 h-10 grid place-items-center rounded-xl text-base font-bold shadow-sm;
+}
+
+.stat-icon.blue {
+  @apply text-[#83b5ff] bg-[#203b64];
+}
+
+.stat-icon.green {
+  @apply text-[#64e3b2] bg-[#17453d];
+}
+
+.stat-icon.purple {
+  @apply text-[#c2a6ff] bg-[#382b5e];
+}
+
+.stat-icon.orange {
+  @apply text-[#ffc27d] bg-[#513522];
+}
+
+.stat-label {
+  @apply text-[#8291aa] text-[10px] font-bold tracking-wider uppercase;
+}
+
+.stat-card h3 {
+  @apply my-3.5 text-[#f5f7ff] text-3xl font-extrabold tracking-tight;
+}
+
+.stat-card p {
+  @apply m-0 text-[#8d9bb2] text-xs;
+}

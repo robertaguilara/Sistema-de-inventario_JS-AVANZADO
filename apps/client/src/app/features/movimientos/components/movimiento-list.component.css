@@ -1,0 +1,53 @@
+.movement-panel {
+  @apply mb-7 p-7 border border-[#26334b] rounded-[13px] bg-[#121c2e] shadow-lg shadow-black/20;
+}
+
+.panel-heading {
+  @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6;
+}
+
+.panel-heading h2 {
+  @apply m-0 text-[#edf2fc] text-[17px] font-bold;
+}
+
+.panel-heading p {
+  @apply mt-1 text-[#8291aa] text-xs;
+}
+
+.filter-buttons {
+  @apply flex gap-2 mb-5;
+}
+
+.btn-filter {
+  @apply py-2 px-4 border border-[#334155] rounded-xl text-[#94a3b8] bg-[#111c30] text-xs font-semibold cursor-pointer transition-all hover:border-[#475569] hover:text-[#e2e8f0] active:scale-95;
+}
+
+.btn-filter.active {
+  @apply border-[#38bdf8] text-white bg-[#0284c7] shadow-sm shadow-[#0284c7]/30;
+}
+
+.btn-registrar-movement {
+  @apply py-2.5 px-4 rounded-xl text-white bg-[#059669] hover:bg-[#047857] hover:shadow-md hover:shadow-[#059669]/20 text-xs font-semibold cursor-pointer transition-all active:scale-95;
+}
+
+.badge-tipo {
+  @apply inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold tracking-wide;
+}
+
+.badge-dot {
+  @apply w-1.5 h-1.5 rounded-full;
+}
+
+.badge-tipo.entrada {
+  @apply bg-[#064e3b]/40 text-[#6ee7b7] border border-[#059669]/50;
+}
+.badge-tipo.entrada .badge-dot {
+  @apply bg-[#10b981];
+}
+
+.badge-tipo.salida {
+  @apply bg-[#7c2d12]/40 text-[#fdba74] border border-[#ea580c]/50;
+}
+.badge-tipo.salida .badge-dot {
+  @apply bg-[#f97316];
+}
